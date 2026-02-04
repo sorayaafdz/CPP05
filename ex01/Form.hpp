@@ -6,11 +6,12 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:56:22 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/03 17:09:29 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:58:04 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <string>
 #include <exception>
@@ -22,12 +23,14 @@ class Form
 {
 	private:
 		const std::string _name;
-		bool _signed;
 		const int _signGrade;
 		const int _execGrade;
+		bool _signed;
 
 	public:
-		Form(const std::string& name, int sGrade, int eGrade);
+		Form();
+		Form(const std::string& name, int signGrade, int execGrade);
+		Form(const Form &other);
 		Form& Form::operator=(const Form& other);
 		~Form();
 
@@ -36,7 +39,7 @@ class Form
 		int getSignGrade() const;
 		int getExecGrade() const;
 
-		void beSigned(const Bureaucrat& b);
+		void beSigned(const Bureaucrat& bureaucrat);
 
 		class GradeTooHighException : public std::exception
 		{
@@ -48,4 +51,6 @@ class Form
 		};
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& f);
+std::ostream& operator<<(std::ostream& output, const Form& form);
+
+#endif

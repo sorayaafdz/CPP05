@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 17:23:22 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/03 17:25:25 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/04 15:30:42 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ AForm::~AForm()
 	
 }
 
-AForm::AForm(const AForm& o) : _name(o._name), _signed(o._signed),
-	_signGrade(o._signGrade), _execGrade(o._execGrade)
+AForm::AForm(const AForm& other) : _name(other._name), _signed(other._signed),
+	_signGrade(other._signGrade), _execGrade(other._execGrade)
 	{
 		
 	}
 
-AForm& AForm::operator=(const AForm& o)
+AForm& AForm::operator=(const AForm& other)
 {
-	if (this != &o)
-		_signed = o._signed;
+	if (this != &other)
+		_signed = other._signed;
 	return (*this);
 }
 
@@ -60,18 +60,18 @@ int AForm::getExecGrade() const
 	return (_execGrade);
 }
 
-void AForm::beSigned(const Bureaucrat& b)
+void AForm::beSigned(const Bureaucrat& bureaucrat)
 {
-	if (b.getGrade() > _signGrade)
+	if (bureaucrat.getGrade() > _signGrade)
 		throw GradeTooLowException();
 	_signed = true;
 }
 
-void AForm::execute(const Bureaucrat& b) const
+void AForm::execute(const Bureaucrat& bureaucrat) const
 {
 	if (!_signed)
 		throw FormNotSignedException();
-	if (b.getGrade() > _execGrade)
+	if (bureaucrat.getGrade() > _execGrade)
 		throw GradeTooLowException();
 	executeAction();
 }

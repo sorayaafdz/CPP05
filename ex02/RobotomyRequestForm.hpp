@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 17:25:58 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/04 15:05:57 by sofernan         ###   ########.fr       */
+/*   Created: 2026/02/04 13:58:13 by sofernan          #+#    #+#             */
+/*   Updated: 2026/02/04 15:05:52 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string _target;
+		void executeAction() const;
 
 	public:
-		ShrubberyCreationForm(const std::string& target);
-		~ShrubberyCreationForm();
-		void executeAction() const;
+		RobotomyRequestForm(const std::string& target);
 };

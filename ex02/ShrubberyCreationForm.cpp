@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 17:26:33 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/03 17:27:00 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/04 13:59:15 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void ShrubberyCreationForm::executeAction() const
 {
 	std::ofstream file((_target + "_shrubbery").c_str());
 	file << "  ^  \n /|\\ \n/***\\\n";
+	file << "    |||" << std::endl;
 	file.close();
 }

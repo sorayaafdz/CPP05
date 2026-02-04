@@ -6,16 +6,16 @@
 #    By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 15:59:12 by sofernan          #+#    #+#              #
-#    Updated: 2026/02/04 14:19:10 by sofernan         ###   ########.fr        #
+#    Updated: 2026/02/04 14:18:56 by sofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex02
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Bureaucrat.cpp main.cpp
+SRCS = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 17:25:58 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/04 15:05:57 by sofernan         ###   ########.fr       */
+/*   Created: 2026/02/04 14:02:19 by sofernan          #+#    #+#             */
+/*   Updated: 2026/02/04 15:05:54 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	private:
 		std::string _target;
+		void executeAction() const;
 
 	public:
-		ShrubberyCreationForm(const std::string& target);
-		~ShrubberyCreationForm();
-		void executeAction() const;
+		PresidentialPardonForm(const std::string& target);
 };

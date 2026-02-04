@@ -6,11 +6,9 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:57:51 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/03 17:22:54 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/04 15:30:42 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #include <string>
 #include <exception>
@@ -37,7 +35,7 @@ class AForm
 		int getSignGrade() const;
 		int getExecGrade() const;
 
-		void beSigned(const Bureaucrat& b);
+		void beSigned(const Bureaucrat& bureaucrat);
 		void execute(const Bureaucrat& executor) const;
 
 		virtual void executeAction() const = 0;

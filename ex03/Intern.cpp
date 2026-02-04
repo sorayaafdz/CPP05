@@ -6,13 +6,52 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:59:30 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/03 17:00:16 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:17:15 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include <iostream>
 
-AForm* Intern::makeForm(const std::string& name, const std::string& target)
+static AForm* createShrubbery(const std::string& target)
+{
+	return new ShrubberyCreationForm(target);
+}
+
+static AForm* createRobotomy(const std::string& target)
+{
+	return new RobotomyRequestForm(target);
+}
+
+static AForm* createPresidential(const std::string& target)
+{
+	return new PresidentialPardonForm(target);
+}
+
+Intern::Intern()
+{
+	
+}
+
+Intern::Intern(const Intern&)
+{
+	
+}
+
+Intern& Intern::operator=(const Intern&)
+{
+	return (*this);
+}
+
+Intern::~Intern()
+{
+	
+}
+
+AForm* Intern::makeForm(const std::string& formName, const std::string& target)
 {
 	const std::string names[3] =
 	{
@@ -28,15 +67,15 @@ AForm* Intern::makeForm(const std::string& name, const std::string& target)
 		&createPresidential
 	};
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; ++i)
 	{
-		if (name == names[i])
+		if (formName == names[i])
 		{
-			std::cout << "Intern creates " << name << std::endl;
-			return creators[i](target);
+			std::cout << "Intern creates " << formName << std::endl;
+			return (creators[i](target));
 		}
 	}
-
-	std::cout << "Intern cannot create " << name << std::endl;
+	std::cout << "Intern cannot create " << formName << std::endl;
 	return (NULL);
 }
+
