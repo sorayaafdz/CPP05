@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:56:43 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/04 17:08:16 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/05 14:33:51 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ const char* Form::GradeTooLowException::what() const throw()
 std::ostream& operator<<(std::ostream& output, const Form& form)
 {
 	output << form.getName()
-	   << " (sign grade " << form.getSignGrade()
-	   << ", exec grade " << form.getExecGrade()
-	   << "), signed: " << form.isSigned();
+	   << ", sign grade: " << form.getSignGrade()
+	   << ", execute grade: " << form.getExecGrade()
+	   << ", signed: " << form.isSigned();
 	return (output);
 }
 
