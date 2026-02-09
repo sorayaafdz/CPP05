@@ -6,7 +6,7 @@
 #    By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 15:59:12 by sofernan          #+#    #+#              #
-#    Updated: 2026/02/04 14:18:56 by sofernan         ###   ########.fr        #
+#    Updated: 2026/02/09 15:10:11 by sofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f Forest_shrubbery
 
 re: fclean all
 

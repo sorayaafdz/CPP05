@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 17:15:00 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/05 17:25:33 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/09 13:29:34 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main()
 
 		std::cout << contract << std::endl;
 
-		worker.signForm(contract); // debe fallar
-		boss.signForm(contract);   // debe tener éxito
+		worker.signForm(contract); // Fail
+		boss.signForm(contract); // Success
 
 		std::cout << contract << std::endl;
 	}
@@ -98,11 +98,11 @@ int main()
 		Form document("Document", 30, 25);
 		std::cout << document << std::endl;
 
-		sori.signForm(document); // éxito
-		pikachu.signForm(document);   // fallará
-		pikachu.incrementGrade();           // ahora puede firmar
+		sori.signForm(document); // Success
+		pikachu.signForm(document); // Fail
+		pikachu.incrementGrade(); // Sign
 		std::cout << pikachu << std::endl;
-		pikachu.signForm(document);   // éxito
+		pikachu.signForm(document); // Success
 
 		std::cout << document << std::endl;
 	}

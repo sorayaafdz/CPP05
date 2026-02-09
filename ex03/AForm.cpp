@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 17:23:22 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/09 17:32:23 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/09 16:47:52 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ AForm::AForm(const AForm& other) : _name(other._name), _signed(other._signed),
 	_signGrade(other._signGrade), _execGrade(other._execGrade)
 	{
 		_signed = other._signed;
-		std::cout << "AForm copy constructor " << _name << std::endl;
+		std::cout << "AForm copy constructor" << _name << std::endl;
 	}
 
 AForm& AForm::operator=(const AForm& other)
 {
 	if (this != &other)
 		_signed = other._signed;
-	std::cout << "AForm copy assignment operator " << _name << std::endl;
+	std::cout << "AForm copy assignment operator" << _name << std::endl;
 	return (*this);
 }
 

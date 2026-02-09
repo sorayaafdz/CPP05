@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 13:58:35 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/09 17:33:08 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/09 16:16:59 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("", 72, 45)
 {
-	std::cout << "RobotomyRequestForm default constructor " << _target << std::endl;
+	std::cout << "RobotomyRequestForm default constructor" << _target << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45)
 {
 	_target = target;
-	std::cout << "RobotomyRequestForm parameterized constructor " << _target << std::endl;
+	std::cout << "RobotomyRequestForm parameterized constructor" << _target << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other)
 {
 	_target = other._target;
-	std::cout << "RobotomyRequestForm copy constructor " << _target << std::endl;
+	std::cout << "RobotomyRequestForm copy constructor" << _target << std::endl;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
@@ -36,13 +36,13 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 		AForm::operator=(other);
 		_target = other._target;
 	}
-	std::cout << "RobotomyRequestForm copy assignment operator " << _target << std::endl;
+	std::cout << "RobotomyRequestForm copy assignment operator" << _target << std::endl;
 	return (*this);
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "RobotomyRequestForm destructor " << _target << std::endl;
+	std::cout << "RobotomyRequestForm destructor" << _target << std::endl;
 }
 
 void RobotomyRequestForm::executeAction() const

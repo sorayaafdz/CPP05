@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:55:03 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/04 16:47:31 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/05 17:25:18 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
 		a.decrementGrade(); // 1 to 2
 		std::cout << a << std::endl;
 	}
-	catch (std::exception &e)
+	catch (std::exception &exception)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << "Exception: " << exception.what() << std::endl;
 	}
 
 	std::cout << "\nTEST 2: GRADE TOO HIGH" << std::endl;
@@ -38,9 +38,9 @@ int main()
 		std::cout << b << std::endl;
 		b.incrementGrade(); // Exception
 	}
-	catch (std::exception &e)
+	catch (std::exception &exception)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << "Exception: " << exception.what() << std::endl;
 	}
 
 	std::cout << "\nTEST 3: GRADE TOO LOW" << std::endl;
@@ -50,9 +50,9 @@ int main()
 		std::cout << c << std::endl;
 		c.decrementGrade(); // Exception
 	}
-	catch (std::exception &e)
+	catch (std::exception &exception)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << "Exception: " << exception.what() << std::endl;
 	}
 
 	std::cout << "\nTEST 4: INVALID CONSTRUCTION" << std::endl;
@@ -60,9 +60,9 @@ int main()
 	{
 		Bureaucrat d("Invalid", 151); // Exception in the constructor
 	}
-	catch (std::exception &e)
+	catch (std::exception &exception)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << "Exception: " << exception.what() << std::endl;
 	}
 
 	return (0);

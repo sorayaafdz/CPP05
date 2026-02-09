@@ -6,58 +6,59 @@
 /*   By: sofernan <sofernan@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:59:30 by sofernan          #+#    #+#             */
-/*   Updated: 2026/02/04 14:17:15 by sofernan         ###   ########.fr       */
+/*   Updated: 2026/02/09 17:39:22 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include <iostream>
 
-static AForm* createShrubbery(const std::string& target)
-{
-	return new ShrubberyCreationForm(target);
-}
-
-static AForm* createRobotomy(const std::string& target)
-{
-	return new RobotomyRequestForm(target);
-}
-
-static AForm* createPresidential(const std::string& target)
-{
-	return new PresidentialPardonForm(target);
-}
+typedef AForm* (*CreateFn)(const std::string &);
 
 Intern::Intern()
 {
-	
+	std::cout << "Intern default constructor" << std::endl;
 }
 
-Intern::Intern(const Intern&)
+Intern::Intern(const Intern& other)
 {
-	
+	(void)other;
+	std::cout << "Intern copy constructor" << std::endl;
 }
 
-Intern& Intern::operator=(const Intern&)
+Intern& Intern::operator=(const Intern& other)
 {
+	(void)other;
+	std::cout << "Intern copy assignment operator" << std::endl;
 	return (*this);
 }
 
 Intern::~Intern()
 {
-	
+	std::cout << "Intern destructor " << std::endl;
 }
 
-AForm* Intern::makeForm(const std::string& formName, const std::string& target)
+AForm* createShrubbery(const std::string& target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+AForm* createRobotomy(const std::string& target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+AForm* createPresidential(const std::string& target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+AForm* Intern::makeForm(const std::string& formName, const std::string& target) const
 {
 	const std::string names[3] =
 	{
-		"shrubbery creation",
-		"robotomy request",
-		"presidential pardon"
+		"shrubbery creation form",
+		"robotomy request form",
+		"presidential pardon form"
 	};
 
 	AForm* (*creators[3])(const std::string&) =
